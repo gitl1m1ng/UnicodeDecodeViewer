@@ -9,12 +9,4 @@
 ![img.png](img.png)
 
 ## 安装步骤
-1. **准备Jython**：
-   Burp Suite运行Java插件需依赖Jython（下载独立包：[Jython官网](https://www.jython.org/downloads.html)）。
-   在Burp中配置Jython：`Extender → Options → Python Environment`选择Jython包。
-
-2. **编译插件**：
-   将`src/org/example/`下的Java文件编译为class文件：
-   ```bash
-   # 假设已下载Burp Montoya API包（burp-extender-api.jar）
-   javac -cp burp-extender-api.jar src/org/example/*.java
+推荐版本JDK21及以上，新版Burpsuite。
