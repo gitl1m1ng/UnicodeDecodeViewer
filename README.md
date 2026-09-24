@@ -27,5 +27,24 @@ mvn clean package
 3. Extension File 选择构建出的 `UnicodeDecodeViewer-1.0.0.jar`
 4. 加载后，任意 HTTP 响应的视图标签栏会出现“unicode解码”标签
 
+## 快速测试
+访问以下接口，响应体中包含大量 `\uXXXX` 形式的中文，可在「unicode解码」标签查看解码效果：
+
+```
+https://unionsug.baidu.com/su?wd=%E5%91%A8%E6%9D%B0%E4%BC%A6&cb=cb
+```
+
+原始响应（节选）：
+```
+cb({"p":false,"q":"\u5468\u6770\u4f26","s":["\u5468\u6770\u4f26\u4e2a\u4eba\u8d44\u6599","\u5468\u6770\u4f26\u6b4c\u66f2",...
+```
+
+解码后：
+```
+cb({"p":false,"q":"周杰伦","s":["周杰伦个人资料","周杰伦歌曲",...
+```
+
+`wd` 参数可替换为任意中文关键词（URL编码后传入）。
+
 ## License
 [MIT](LICENSE)
